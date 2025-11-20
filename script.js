@@ -27,19 +27,20 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   searchInp.addEventListener("change", (e) => {
-    let userInput = e.target.value.replace(" ", "-").toLowerCase(); // normalisation
-    
+    let userInput = e.target.value.replace(" ", "-").toLowerCase(); // iut pres -> iut-pres
+
     // convert to an array with from (bc links is a NodeList, there's no find function for a nodlist, i have to do it by hand with a for loop)
     // then using find going trough the link to find the coresponding one
+    // going through all the 'a' balise in the main html to see if there's an page based on this name
     
     let searchLink = Array.from(links).find(link => {
       let pageName = link.dataset.page.replace("pages/", "").replace(".html", "").toLowerCase();
-      
+
       // si file: [ages/iut-presentation.html et inp: iut, iut est dans le nom du fichier (s'il n'y en a qu'un seul et va sinon tjr prendre le 1er)
       return pageName.includes(userInput);
     });
 
-    if (searchLink){
+    if (searchLink){ // either undefined bc not found or an 'a link' (= True)
       loadPage(searchLink.dataset.page);
     } else {
       console.log("404");

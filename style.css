@@ -1,9 +1,11 @@
+/* =======================
+   Reset & Global Styles
+======================= */
 html,
 body {
     height: 100%;
-    font-family: 'GrosaMono', 'Courier New', monospace;
-    background: #0f0f0f;
     font-family: Arial, sans-serif;
+    background: #0f0f0f;
     color: #ccc;
 }
 
@@ -14,7 +16,9 @@ body {
     box-sizing: border-box;
 }
 
-
+/* =======================
+   Header
+======================= */
 .header {
     display: grid;
     grid-template-columns: 350px 1fr auto;
@@ -55,20 +59,18 @@ body {
     color: #fff;
 }
 
-.sidebar {
-    display: flex;
-    flex-direction: column;
-    padding: 12px 24px;
-    background-color: white;
-    height: max-content;
-}
-
+/* =======================
+   Main Layout
+======================= */
 main {
     display: grid;
     grid-template-columns: 374px 1fr;
     height: calc(100vh - 60px);
 }
 
+/* =======================
+   Sidebar
+======================= */
 .sidebar {
     display: flex;
     flex-direction: column;
@@ -99,14 +101,11 @@ main {
     border-top: 1px solid #222;
 }
 
-/* Lien actif */
 .sidebar a.h {
-    background: #ff4747;
+    background: #1a1a1a;
     color: white;
-    font-weight: 600;
 }
 
-/* Section profil */
 .sidebar a:last-child {
     display: flex;
     align-items: center;
@@ -114,18 +113,26 @@ main {
     margin-top: 20px;
 }
 
-.sidebar a:last-child img {
+.sidebar img {
     width: 32px;
     height: 32px;
-    border-radius: 20%;
-    background: #333;
 }
 
+/* =======================
+   Page <...>
+======================= */
 
-.h{
-    background-color: red;
+
+
+
+
+/* =======================
+   Misc
+======================= */
+.h {
+    background-color: #1a1a1a;
 }
 
-.content{
-    padding: 30px;
+#content {
+    margin: 30px;
 }
